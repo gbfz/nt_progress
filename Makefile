@@ -14,7 +14,7 @@ DEPFLAGS	=	-MMD -MF $(@:.o=.d)
 $(NAME):	$(OBJS) Makefile
 		$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o:		%.cpp Makefile
+%.o:		src/%.cpp Makefile
 		$(CXX) $(CXXFLAGS) $(DEPFLAGS) -c $< -o $@
 
 clean:
