@@ -9,6 +9,7 @@ int main(int ac, char **av) {
 		std::getline(std::cin, input);
 	}
 	Calculator calculator;
+	calculator.replace_commas(input);
 	bool good = calculator.calculate(input);
 	if (!good) return 2;
 	calculator.print();

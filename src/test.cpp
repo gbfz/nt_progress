@@ -72,6 +72,14 @@ TEST(Calc, typo) {
 	ASSERT_FALSE(result);
 }
 
+TEST(Calc, commas) {
+	double val =  1.1 * 2.13 + (100 * 0.4);
+	string exp = "1,1 * 2,13 + (100 * 0,4)";
+	calc.replace_commas(exp);
+	calc.calculate(exp);
+	ASSERT_DOUBLE_EQ(val, calc.get());
+}
+
 int main(int ac, char **av) {
 	testing::InitGoogleTest(&ac, av);
 	return RUN_ALL_TESTS();

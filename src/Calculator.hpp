@@ -19,6 +19,7 @@ private:
 
 public:
 	Calculator();
+	void	replace_commas(std::string& input);
 	bool	calculate(const std::string& input);
 	double	get() const;
 	void	print() const;

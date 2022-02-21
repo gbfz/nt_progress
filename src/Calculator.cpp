@@ -24,6 +24,13 @@ struct Calculator::Parser: qi::grammar<Iter, double(), space_type> {
 	}
 };
 
+void Calculator::replace_commas(std::string& input) {
+	for (char& c: input) {
+		if (c == ',')
+			c = '.';
+	}
+}
+
 bool Calculator::calculate(const std::string& input) {
 	Iter it = input.begin(),
 	     end = input.end();
